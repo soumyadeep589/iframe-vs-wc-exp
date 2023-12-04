@@ -5,17 +5,16 @@ class ProductNew extends HTMLElement {
     // Create a shadow DOM
     this.attachShadow({ mode: "open" });
 
-    // Include Bootstrap CSS in the shadow DOM
-    const linkElement = document.createElement("link");
-    linkElement.setAttribute("rel", "stylesheet");
-    linkElement.setAttribute(
-      "href",
-      "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    );
-    this.shadowRoot.appendChild(linkElement);
-
     // Your component's HTML content
     this.shadowRoot.innerHTML = `
+    <style>
+      @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+
+      /* Add any additional component-specific styles here */
+      .container {
+        margin-top: 20px;
+      }
+    </style>
     <div class="container mt-3">
       <form>
         <div class="form-group">

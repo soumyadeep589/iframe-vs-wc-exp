@@ -4,15 +4,6 @@ class ProductDetail extends HTMLElement {
 
     // Create a shadow DOM
     this.attachShadow({ mode: "open" });
-
-    // Include Bootstrap CSS in the shadow DOM
-    const linkElement = document.createElement("link");
-    linkElement.setAttribute("rel", "stylesheet");
-    linkElement.setAttribute(
-      "href",
-      "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    );
-    this.shadowRoot.appendChild(linkElement);
   }
 
   static get observedAttributes() {
@@ -35,16 +26,24 @@ class ProductDetail extends HTMLElement {
     const count = this.getAttribute("count") || "";
 
     this.shadowRoot.innerHTML = `
-      <div class="container mt-3">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Product Details</h5>
-            <p class="card-text"><strong>Name:</strong> ${name}</p>
-            <p class="card-text"><strong>Type:</strong> ${type}</p>
-            <p class="card-text"><strong>Count:</strong> ${count}</p>
-          </div>
+        <style>
+            @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+
+            /* Add any additional component-specific styles here */
+            .container {
+            margin-top: 20px;
+            }
+        </style>
+        <div class="container mt-3">
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Product Details</h5>
+                <p class="card-text"><strong>Name:</strong> ${name}</p>
+                <p class="card-text"><strong>Type:</strong> ${type}</p>
+                <p class="card-text"><strong>Count:</strong> ${count}</p>
+            </div>
+            </div>
         </div>
-      </div>
     `;
   }
 }
