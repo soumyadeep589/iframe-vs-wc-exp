@@ -43,29 +43,6 @@
 	</div>
 
 	<script>
-		// window.addEventListener("message", (event) => {
-		// 	if (event.data.type === "newProduct") {
-		// 		productListIframe.contentWindow.postMessage(
-		// 			{ type: "newProduct", data: event.data.data },
-		// 			"*"
-		// 		);
-		// 	}
-
-		// 	if (event.data.type === "productClicked") {
-		// 		productDetailIframe.contentWindow.postMessage(
-		// 			{ type: "productClicked", data: event.data.data },
-		// 			"*"
-		// 		);
-		// 	}
-
-		// 	if (event.data.type === "productLatest") {
-		// 		productLatestIframe.contentWindow.postMessage(
-		// 			{ type: "productLatest", data: event.data.data },
-		// 			"*"
-		// 		);
-		// 	}
-		// });
-
 		window.addEventListener("click-product", (event) => {
 			console.log("here")
 			updateProduct(event.detail);
